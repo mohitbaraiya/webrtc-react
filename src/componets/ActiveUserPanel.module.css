@@ -1,0 +1,13 @@
+.active-users-panel {
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid #cddfe7;
+}
+.panel-title {
+  margin: 10px 0 0 0;
+  padding-left: 30px;
+  font-weight: 500;
+  font-size: 18px;
+  border-bottom: 1px solid #cddfe7;
+  padding-bottom: 10px;
+}
