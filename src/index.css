@@ -7,7 +7,13 @@ body {
   background-color: #f9fafc;
   color: #595354;
 }
+ul {
+  padding: 0;
+}
 
+mark {
+  display: inline-block;
+}
 .content-container {
   width: 100%;
   height: calc(100vh - 89px);
@@ -21,6 +27,7 @@ body {
   border-bottom: 1px solid #cddfe7;
   cursor: pointer;
   user-select: none;
+  list-style-type: none;
 }
 
 .active-user:hover {
@@ -33,4 +40,61 @@ body {
   border-right: 5px solid #65a9e5;
   font-weight: 500;
   transition: all 0.5s ease;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.modal {
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 30px;
+}
+.theme-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-bottom: 0.2em solid #65a9e5;
+  background: rgba(101, 169, 229, 0.2);
+  border-radius: 0.2em 0.2em 0 0;
+  padding: 0.4em;
+  color: #65a9e5;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.theme-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0.2em solid #65a9e5;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0);
+  padding: 0.85em 1.5em;
+  color: #65a9e5;
+  border-radius: 2em;
+  transition: 0.4s;
+  display: inline-block;
+}
+.theme-button:disabled {
+  cursor: not-allowed;
+}
+.theme-button:not(:first-child) {
+  margin-left: 5px;
+}
+.theme-button:hover {
+  background: #65a9e5;
+  color: #fff;
+}
+
+.user-info-form .form-actions {
+  margin-top: 20px;
+  text-align: end;
 }
