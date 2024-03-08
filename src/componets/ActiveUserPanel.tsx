@@ -12,10 +12,7 @@ export default function ActiveUserPanel(): React.JSX.Element {
   const [activeUserId, setActiveUserId] = useState<string>("");
 
   useEffect(() => {
-    socket.on("new-user-add", () => console.log("called with"));
     socket.on("update-user-list", ({ users }: { users: User[] }) => {
-      console.log("call");
-
       setUsers(users.filter((user) => user.id !== socket.id));
     });
     return () => {};
