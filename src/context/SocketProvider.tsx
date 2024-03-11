@@ -12,10 +12,13 @@ const socket = io(import.meta.env.VITE_SOCKET_URL, {
 interface DefaultValue {
   socket: Socket<DefaultEventsMap, DefaultEventsMap>;
   socketConnect: boolean;
+  peer: RTCPeerConnection;
 }
+const peer = new RTCPeerConnection();
 export const SocketContext = React.createContext<DefaultValue>({
   socket: socket,
   socketConnect: false,
+  peer: peer,
 });
 export default function SocketProvider({
   children,
@@ -29,6 +32,7 @@ export default function SocketProvider({
   const value: DefaultValue = {
     socket: socket,
     socketConnect: socketConnect,
+    peer: peer,
   };
   useEffect(() => {
     if (socketConnect) {
